@@ -1,0 +1,115 @@
+\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper,11pt,titlepage]{bxjsarticle}
+\usepackage{amssymb,amsmath}
+\usepackage{bm}
+\usepackage{ascmac}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+
+\newcommand{\figref}[1]{図~\ref{#1}}
+\newcommand{\tabref}[1]{表~\ref{#1}}
+\newcommand{\equref}[1]{式~\eqref{#1}}
+\newcommand{\mrm}[1]{\mbox{$_{\mathrm{#1}}$}}
+\newcommand{\crm}[1]{\mbox{$\,\mathrm{#1}$}}
+
+\makeatletter
+\def\Hline{%
+\noalign{\ifnum0=`}\fi\hrule \@height 1.5pt \futurelet
+\reserved@a\@xhline}
+\makeatother
+%===============================================================================
+\begin{document}
+\title{学生実験のための\LaTeX{}雛形}
+\author{京都大学工学部電気電子工学科 \\ 京大太郎}
+\maketitle
+%===============================================================================
+\section{目的}
+学生実験のレポート，Wordでもいいけど大学生だし\LaTeX{}で書きたいよね．\\
+\LaTeX{}導入のハードルを下げるために雛形を残したいと思った．
+%目的ここまで
+%===============================================================================
+\section{原理}
+\subsection{hogeの原理}
+\label{sub:m_hoge}
+{\bf 実験テキストの丸写しは駄目だよ．}
+とか言いつつ大体丸写しになる．
+%hogeの動作原理ここまで
+%原理ここまで
+%===============================================================================
+\section{方法}
+\begin{enumerate}
+  \item まずこうするよ
+  \item えいやっ
+  \item つぎはこうだよ
+  \item おーできたﾊﾟﾁﾊﾟﾁ
+\end{enumerate}
+%方法ここまで
+%===============================================================================
+\section{使用器具}
+\begin{itemize}
+  \item $10\crm{k\Omega}$抵抗とか
+  \item オシロスコープ KENWOOD CS-5455
+  \item 直流電源装置 KENWOOD PR18-1.2A
+  \item その他素子とか
+  \item ちゃんと型番も書いてね
+\end{itemize}
+%使用器具ここまで
+%===============================================================================
+\section{結果}
+図は\figref{fig:5ebec}のように表示する．
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=90mm]{img/5ebec.jpg}
+  \caption{ぼく}
+  \label{fig:5ebec}
+\end{figure}
+
+図がプロットの場合は\verb+label+を\verb+\label{plt:~}+とする．\\
+プロットは\verb+width=90+から\verb+width=110mm+あたりが大体いい感じ．
+%結果ここまで
+%===============================================================================
+\section{考察}
+
+\subsection{数式の書き方}
+
+以下の\equref{eq:sc},\eqref{eq:maxwell}はなんかよく見る式．
+\begin{equation}
+  I = I\mrm{ph} - I\mrm{d} = I\mrm{ph} - I_0\left\{\exp\left(\frac{qV}{nkT}\right)-1\right\}
+  \label{eq:sc}
+\end{equation}
+
+\begin{eqnarray}
+  \begin{cases}
+    \nabla \cdot \bm{B}(t,\bm{x}) &= 0 \\
+    \nabla \times \bm{E}(t,\bm{x}) + {\cfrac {\partial \bm{B}(t,\bm{x})}{\partial t}} &= 0 \\
+    \nabla \cdot \bm{D}(t,\bm{x}) &= \rho (t,\bm{x}) \\
+    \nabla \times \bm{H}(t,\bm{x})-{\cfrac {\partial \bm{D}(t,\bm{x})}{\partial t}} &= \bm{j}(t,\bm{x})
+    \label{eq:maxwell}
+  \end{cases}
+\end{eqnarray}
+数式が複数行に渡るなどするときは\verb+eqnarray+を使おう．
+
+\subsection{参考になるサイト}
+\label{sub:d_site}
+シバニャンさん(@\_6v\_)が書かれたお手軽\LaTeX{} 入門\cite{_6v_}．
+僕はこれを見て\LaTeX{} でレポートを書き始めました．\\
+\url{http://shiba6v.hatenablog.com/entry/2017/10/26/172825}
+
+\LaTeX{}で書くのが面倒な表はこのサイト\cite{tablegen}を使って書くのがおすすめ．\\
+\url{https://www.tablesgenerator.com/}
+
+数式はこのサイト\cite{mathjax}を参考にコピペしていました．\\
+\url{http://easy-copy-mathjax.xxxx7.com/}
+
+
+%考察ここまで
+%===============================================================================
+%参考文献
+\begin{thebibliography}{9}
+\bibitem{text} 京都大学工学部電気系教室 (20xx) 『電気電子工学OO 20xx年度版』←これは書かなくて良いって言う先生もいる
+\bibitem{_6v_} 理系大学生のための超手抜きLaTeXレポート入門 \url{http://shiba6v.hatenablog.com/entry/2017/10/26/172825}
+\bibitem{tablegen} Table Generator \url{https://www.tablesgenerator.com/}
+\bibitem{mathjax} Easy Copy MathJax \url{http://easy-copy-mathjax.xxxx7.com/}
+\end{thebibliography}
+\end{document}
