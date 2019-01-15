@@ -1,4 +1,4 @@
-## 学生実験のためのLaTeX雛形
+## student-experiment-latex-template
 学生実験のレポートをLaTeXで書くハードルを下げるために雛形を残したいと思った．
 
 LaTeXエディタの環境構築はTwitterモーメントに纏めたので見てやってください．→[お前らのLaTeXエディタはダサい][b8de6f30]
